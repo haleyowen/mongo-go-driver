@@ -747,7 +747,7 @@ func (c *Client) ListDatabaseNames(ctx context.Context, filter interface{}, opts
 // Errors returned from the closure are transparently returned from
 // this function.
 func WithSession(ctx context.Context, sess Session, fn func(SessionContext) error) error {
-	return fn(contextWithSession(ctx, sess))
+	return fn(ContextWithSession(ctx, sess))
 }
 
 // UseSession creates a new session that is only valid for the
