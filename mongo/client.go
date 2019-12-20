@@ -662,7 +662,7 @@ func (c *Client) ListDatabases(ctx context.Context, filter interface{}, opts ...
 		ctx = context.Background()
 	}
 
-	sess := sessionFromContext(ctx)
+	sess := SessionFromContext(ctx)
 
 	err := c.validSession(sess)
 	if sess == nil && c.sessionPool != nil {
